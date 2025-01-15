@@ -6,17 +6,28 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		BF5794EB2D3752950058EBA2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF5794E52D3752950058EBA2 /* Preview Assets.xcassets */; };
+		BF5794EC2D3752950058EBA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF5794E72D3752950058EBA2 /* Assets.xcassets */; };
+		BF5794ED2D3752950058EBA2 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5794E82D3752950058EBA2 /* HomeView.swift */; };
+		BF5794EE2D3752950058EBA2 /* IncomeAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5794E92D3752950058EBA2 /* IncomeAppApp.swift */; };
+		BF5794F12D3752BD0058EBA2 /* TransactionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5794F02D3752BD0058EBA2 /* TransactionModel.swift */; };
+		BF5794F32D37531C0058EBA2 /* TransactionTypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5794F22D37531C0058EBA2 /* TransactionTypeModel.swift */; };
+		BF5794F62D375C010058EBA2 /* TransactionRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5794F52D375C010058EBA2 /* TransactionRowView.swift */; };
+		BF5794F82D37649A0058EBA2 /* AddTransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5794F72D37649A0058EBA2 /* AddTransactionView.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		BF5794D42D37528C0058EBA2 /* IncomeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IncomeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF5794E52D3752950058EBA2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		BF5794E72D3752950058EBA2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BF5794E82D3752950058EBA2 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		BF5794E92D3752950058EBA2 /* IncomeAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeAppApp.swift; sourceTree = "<group>"; };
+		BF5794F02D3752BD0058EBA2 /* TransactionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionModel.swift; sourceTree = "<group>"; };
+		BF5794F22D37531C0058EBA2 /* TransactionTypeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTypeModel.swift; sourceTree = "<group>"; };
+		BF5794F52D375C010058EBA2 /* TransactionRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRowView.swift; sourceTree = "<group>"; };
+		BF5794F72D37649A0058EBA2 /* AddTransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		BF5794D62D37528C0058EBA2 /* IncomeApp */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = IncomeApp;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		BF5794D12D37528C0058EBA2 /* Frameworks */ = {
@@ -32,7 +43,7 @@
 		BF5794CB2D37528C0058EBA2 = {
 			isa = PBXGroup;
 			children = (
-				BF5794D62D37528C0058EBA2 /* IncomeApp */,
+				BF5794EA2D3752950058EBA2 /* IncomeApp */,
 				BF5794D52D37528C0058EBA2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -43,6 +54,45 @@
 				BF5794D42D37528C0058EBA2 /* IncomeApp.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		BF5794E62D3752950058EBA2 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				BF5794E52D3752950058EBA2 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		BF5794EA2D3752950058EBA2 /* IncomeApp */ = {
+			isa = PBXGroup;
+			children = (
+				BF5794F42D375BDC0058EBA2 /* Views */,
+				BF5794EF2D3752A70058EBA2 /* Model */,
+				BF5794E92D3752950058EBA2 /* IncomeAppApp.swift */,
+				BF5794E72D3752950058EBA2 /* Assets.xcassets */,
+				BF5794E62D3752950058EBA2 /* Preview Content */,
+			);
+			path = IncomeApp;
+			sourceTree = "<group>";
+		};
+		BF5794EF2D3752A70058EBA2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BF5794F02D3752BD0058EBA2 /* TransactionModel.swift */,
+				BF5794F22D37531C0058EBA2 /* TransactionTypeModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BF5794F42D375BDC0058EBA2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BF5794E82D3752950058EBA2 /* HomeView.swift */,
+				BF5794F52D375C010058EBA2 /* TransactionRowView.swift */,
+				BF5794F72D37649A0058EBA2 /* AddTransactionView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -59,9 +109,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				BF5794D62D37528C0058EBA2 /* IncomeApp */,
 			);
 			name = IncomeApp;
 			packageProductDependencies = (
@@ -109,6 +156,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF5794EB2D3752950058EBA2 /* Preview Assets.xcassets in Resources */,
+				BF5794EC2D3752950058EBA2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +168,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF5794F32D37531C0058EBA2 /* TransactionTypeModel.swift in Sources */,
+				BF5794F12D3752BD0058EBA2 /* TransactionModel.swift in Sources */,
+				BF5794F62D375C010058EBA2 /* TransactionRowView.swift in Sources */,
+				BF5794F82D37649A0058EBA2 /* AddTransactionView.swift in Sources */,
+				BF5794ED2D3752950058EBA2 /* HomeView.swift in Sources */,
+				BF5794EE2D3752950058EBA2 /* IncomeAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
