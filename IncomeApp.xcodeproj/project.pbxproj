@@ -17,6 +17,7 @@
 		BF5794F82D37649A0058EBA2 /* AddTransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5794F72D37649A0058EBA2 /* AddTransactionView.swift */; };
 		BFAE7FE42D6EA14A0097BC5D /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAE7FE32D6EA14A0097BC5D /* SettingsView.swift */; };
 		BFAE7FE62D6EA2FB0097BC5D /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAE7FE52D6EA2FB0097BC5D /* Currency.swift */; };
+		BFAE7FE92D6ECD8A0097BC5D /* PreviewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAE7FE82D6ECD8A0097BC5D /* PreviewHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		BF5794F72D37649A0058EBA2 /* AddTransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionView.swift; sourceTree = "<group>"; };
 		BFAE7FE32D6EA14A0097BC5D /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		BFAE7FE52D6EA2FB0097BC5D /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		BFAE7FE82D6ECD8A0097BC5D /* PreviewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 		BF5794EA2D3752950058EBA2 /* IncomeApp */ = {
 			isa = PBXGroup;
 			children = (
+				BFAE7FE72D6ECD660097BC5D /* Helpers */,
 				BF5794F42D375BDC0058EBA2 /* Views */,
 				BF5794EF2D3752A70058EBA2 /* Model */,
 				BF5794E92D3752950058EBA2 /* IncomeAppApp.swift */,
@@ -99,6 +102,14 @@
 				BFAE7FE32D6EA14A0097BC5D /* SettingsView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		BFAE7FE72D6ECD660097BC5D /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				BFAE7FE82D6ECD8A0097BC5D /* PreviewHelper.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,6 +191,7 @@
 				BF5794F62D375C010058EBA2 /* TransactionRowView.swift in Sources */,
 				BFAE7FE62D6EA2FB0097BC5D /* Currency.swift in Sources */,
 				BF5794F82D37649A0058EBA2 /* AddTransactionView.swift in Sources */,
+				BFAE7FE92D6ECD8A0097BC5D /* PreviewHelper.swift in Sources */,
 				BF5794ED2D3752950058EBA2 /* HomeView.swift in Sources */,
 				BF5794EE2D3752950058EBA2 /* IncomeAppApp.swift in Sources */,
 			);

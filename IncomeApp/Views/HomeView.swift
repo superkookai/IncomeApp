@@ -6,16 +6,15 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct HomeView: View {
-    @State private var transactions: [Transaction] = [
-        Transaction(title: "Apple", type: .expense, amount: 120.25, date: .now),
-        Transaction(title: "Banana", type: .income, amount: 77.6, date: .now.addingTimeInterval(-86400)),
-        Transaction(title: "Orange", type: .expense, amount: 120.25, date: .now.addingTimeInterval(-86400*3))
-    ]
+    
+    @Query var transactions: [TransactionModel]
+    @Environment(\.modelContext) var modelContext
     
     @State private var showEditTransaction: Bool = false
-    @State private var transactionToEdit: Transaction? = nil
+    @State private var transactionToEdit: TransactionModel? = nil
     
     @State private var totalExpenses: Double = 0
     @State private var totalIncome: Double = 0
@@ -48,7 +47,7 @@ struct HomeView: View {
         return numberFormatter.string(from: NSNumber(value: self.totalBalance)) ?? ""
     }
     
-    var displayTransactions: [Transaction] {
+    var displayTransactions: [TransactionModel] {
         let filterMinimumTransactions = transactions.filter({$0.amount >= filterMinimum})
         let sortedTransactions = orderDecending ? filterMinimumTransactions.sorted(by: {$0.date > $1.date}) : filterMinimumTransactions.sorted(by: {$0.date < $1.date})
         return sortedTransactions
@@ -67,8 +66,13 @@ struct HomeView: View {
                             } label: {
                                 TransactionRowView(transaction: transaction)
                             }
+                            .swipeActions(edge: .trailing, allowsFullSwipe: true) {
+                                Button("Delete", systemImage: "trash", role: .destructive) {
+                                    modelContext.delete(transaction)
+                                }
+                                .tint(.red)
+                            }
                         }
-                        .onDelete(perform: delete)
                     }
                     .scrollContentBackground(.hidden)
                     .listStyle(.plain)
@@ -78,7 +82,7 @@ struct HomeView: View {
             }
             .navigationTitle("Income")
             .navigationDestination(item: $transactionToEdit, destination: { transaction in
-                AddTransactionView(transactionToEdit: transaction, transactions: $transactions)
+                AddTransactionView(transactionToEdit: transaction)
             })
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
@@ -107,7 +111,11 @@ struct HomeView: View {
     }
     
     func delete(at offsets: IndexSet) {
-        transactions.remove(atOffsets: offsets)
+        for index in offsets {
+            let transactionToDelete = transactions[index]
+            modelContext.delete(transactionToDelete)
+            try? modelContext.save()
+        }
     }
     
     func FloatingButton() -> some View {
@@ -115,7 +123,7 @@ struct HomeView: View {
             Spacer()
             
             NavigationLink {
-                AddTransactionView(transactions: $transactions)
+                AddTransactionView()
             } label: {
                 Image(systemName: "plus")
                     .font(.largeTitle)
@@ -181,7 +189,8 @@ struct HomeView: View {
     
 }
 
-#Preview {
+#Preview("Sample Data") {
     HomeView()
+        .modelContainer(PreviewHelper.previewContainer)
 }
 

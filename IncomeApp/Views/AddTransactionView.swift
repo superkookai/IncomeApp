@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AddTransactionView: View {
-    var transactionToEdit: Transaction?
+    var transactionToEdit: TransactionModel?
     @State private var amount: Double = 0
     @State private var title: String = ""
     @State private var selectedTransactionType: TransactionType = .expense
@@ -16,9 +16,8 @@ struct AddTransactionView: View {
     @State private var alertMessage: String = ""
     @State private var isAlertPresented: Bool = false
     
-    @Binding var transactions: [Transaction]
-    
     @Environment(\.dismiss) var dismiss
+    @Environment(\.modelContext) var modelContext
     
     @AppStorage("currency") var currency: Currency = .usd
     
@@ -94,12 +93,13 @@ struct AddTransactionView: View {
             return
         }
         
-        let transaction = Transaction(title: title, type: selectedTransactionType, amount: amount, date: .now)
-        
-        if let transactionToEdit, let index = transactions.firstIndex(of: transactionToEdit) {
-            transactions[index] = transaction
+        if let transactionToEdit {
+            transactionToEdit.title = title
+            transactionToEdit.type = selectedTransactionType
+            transactionToEdit.amount = amount
         } else {
-            transactions.append(transaction)
+            let transaction = TransactionModel(id: UUID(), title: title, type: selectedTransactionType, amount: amount, date: .now)
+            modelContext.insert(transaction)
         }
         
         dismiss()
@@ -107,5 +107,5 @@ struct AddTransactionView: View {
 }
 
 #Preview {
-    AddTransactionView(transactions: .constant([]))
+    AddTransactionView()
 }
