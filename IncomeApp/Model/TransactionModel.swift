@@ -27,4 +27,11 @@ struct Transaction: Identifiable, Hashable {
         numberFormatter.numberStyle = .currency
         return numberFormatter.string(from: NSNumber(value: self.amount)) ?? ""
     }
+    
+    func displayAmount(currency: Currency) -> String {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .currency
+        numberFormatter.locale = currency.locale
+        return numberFormatter.string(from: NSNumber(value: self.amount)) ?? ""
+    }
 }

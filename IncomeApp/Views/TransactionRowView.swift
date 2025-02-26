@@ -10,6 +10,8 @@ import SwiftUI
 struct TransactionRowView: View {
     let transaction: Transaction
     
+    @AppStorage("currency") var currency: Currency = .usd
+    
     var body: some View {
         VStack {
             HStack {
@@ -34,7 +36,7 @@ struct TransactionRowView: View {
                         Spacer()
                         
                         //String(format: "%.2f", transaction.amount)
-                        Text(transaction.displayAmount)
+                        Text(transaction.displayAmount(currency: currency))
                             .font(.system(size: 15, weight: .bold))
                     }
                     

@@ -21,22 +21,37 @@ struct HomeView: View {
     @State private var totalIncome: Double = 0
     @State private var totalBalance: Double = 0
     
+    @State private var showSettings: Bool = false
+    
+    @AppStorage("orderDecending") var orderDecending: Bool = false
+    @AppStorage("currency") var currency: Currency = .usd
+    @AppStorage("filterMinimum") var filterMinimum: Double = 0
+    
     var totalExpensesDisplay: String {
         let numberFormatter = NumberFormatter()
         numberFormatter.numberStyle = .currency
+        numberFormatter.locale = currency.locale
         return numberFormatter.string(from: NSNumber(value: self.totalExpenses)) ?? ""
     }
     
     var totalIncomeDisplay: String {
         let numberFormatter = NumberFormatter()
         numberFormatter.numberStyle = .currency
+        numberFormatter.locale = currency.locale
         return numberFormatter.string(from: NSNumber(value: self.totalIncome)) ?? ""
     }
     
     var totalBalanceDisplay: String {
         let numberFormatter = NumberFormatter()
         numberFormatter.numberStyle = .currency
+        numberFormatter.locale = currency.locale
         return numberFormatter.string(from: NSNumber(value: self.totalBalance)) ?? ""
+    }
+    
+    var displayTransactions: [Transaction] {
+        let filterMinimumTransactions = transactions.filter({$0.amount >= filterMinimum})
+        let sortedTransactions = orderDecending ? filterMinimumTransactions.sorted(by: {$0.date > $1.date}) : filterMinimumTransactions.sorted(by: {$0.date < $1.date})
+        return sortedTransactions
     }
     
     var body: some View {
@@ -46,7 +61,7 @@ struct HomeView: View {
                     BalanceView()
                     
                     List {
-                        ForEach(transactions) { transaction in
+                        ForEach(displayTransactions) { transaction in
                             Button {
                                 transactionToEdit = transaction
                             } label: {
@@ -68,12 +83,15 @@ struct HomeView: View {
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button {
-                        
+                        showSettings.toggle()
                     } label: {
                         Image(systemName: "gear")
                     }
                 }
             }
+            .sheet(isPresented: $showSettings, content: {
+                SettingsView()
+            })
             .onAppear {
                 self.totalExpenses = transactions.filter{ $0.type == .expense}.reduce(0) { $0 + $1.amount }
                 self.totalIncome = transactions.filter{ $0.type == .income}.reduce(0) { $0 + $1.amount }

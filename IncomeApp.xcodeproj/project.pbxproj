@@ -15,6 +15,8 @@
 		BF5794F32D37531C0058EBA2 /* TransactionTypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5794F22D37531C0058EBA2 /* TransactionTypeModel.swift */; };
 		BF5794F62D375C010058EBA2 /* TransactionRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5794F52D375C010058EBA2 /* TransactionRowView.swift */; };
 		BF5794F82D37649A0058EBA2 /* AddTransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5794F72D37649A0058EBA2 /* AddTransactionView.swift */; };
+		BFAE7FE42D6EA14A0097BC5D /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAE7FE32D6EA14A0097BC5D /* SettingsView.swift */; };
+		BFAE7FE62D6EA2FB0097BC5D /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAE7FE52D6EA2FB0097BC5D /* Currency.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,8 @@
 		BF5794F22D37531C0058EBA2 /* TransactionTypeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTypeModel.swift; sourceTree = "<group>"; };
 		BF5794F52D375C010058EBA2 /* TransactionRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRowView.swift; sourceTree = "<group>"; };
 		BF5794F72D37649A0058EBA2 /* AddTransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionView.swift; sourceTree = "<group>"; };
+		BFAE7FE32D6EA14A0097BC5D /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		BFAE7FE52D6EA2FB0097BC5D /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,7 @@
 			children = (
 				BF5794F02D3752BD0058EBA2 /* TransactionModel.swift */,
 				BF5794F22D37531C0058EBA2 /* TransactionTypeModel.swift */,
+				BFAE7FE52D6EA2FB0097BC5D /* Currency.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -91,6 +96,7 @@
 				BF5794E82D3752950058EBA2 /* HomeView.swift */,
 				BF5794F52D375C010058EBA2 /* TransactionRowView.swift */,
 				BF5794F72D37649A0058EBA2 /* AddTransactionView.swift */,
+				BFAE7FE32D6EA14A0097BC5D /* SettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -168,9 +174,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFAE7FE42D6EA14A0097BC5D /* SettingsView.swift in Sources */,
 				BF5794F32D37531C0058EBA2 /* TransactionTypeModel.swift in Sources */,
 				BF5794F12D3752BD0058EBA2 /* TransactionModel.swift in Sources */,
 				BF5794F62D375C010058EBA2 /* TransactionRowView.swift in Sources */,
+				BFAE7FE62D6EA2FB0097BC5D /* Currency.swift in Sources */,
 				BF5794F82D37649A0058EBA2 /* AddTransactionView.swift in Sources */,
 				BF5794ED2D3752950058EBA2 /* HomeView.swift in Sources */,
 				BF5794EE2D3752950058EBA2 /* IncomeAppApp.swift in Sources */,
